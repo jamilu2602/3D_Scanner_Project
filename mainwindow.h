@@ -37,8 +37,8 @@
 #include <vtkPolyDataMapper.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
-#include <vtkAutoInit.h>
 
+#include <vtkAutoInit.h>
 VTK_MODULE_INIT(vtkRenderingOpenGL2)
 VTK_MODULE_INIT(vtkInteractionStyle)
 VTK_MODULE_INIT(vtkRenderingFreeType)
@@ -55,8 +55,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud;
-    std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> clouds_vec;
+    pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud;
+    std::vector<pcl::PointCloud<pcl::PointXYZRGBA>::Ptr> clouds_vec;
     pcl::PolygonMesh::Ptr poly_mesh;
     Point2Mesh p2m;
     bool flag;
@@ -79,7 +79,7 @@ private:
     int flag_type = -1;
     QToolButton *toolButton;
     QDoubleSpinBox *z_axis_min, *z_axis_max;
-    QComboBox *tri_comboBox;
+    QComboBox *tri_comboBox, *sensor_comboBox;
     QSpinBox *poisonSpinBox;
 
 protected:
